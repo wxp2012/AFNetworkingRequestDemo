@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^Block)(NSError *error, NSDictionary *dict);
+
 @interface Request : NSObject
+
++ (void) requestBaseUrl:(NSString *)url path:(NSString *)pathUrl parameters:(NSDictionary *)parameters andCompleteBlock:(Block)block;
 
 @end
